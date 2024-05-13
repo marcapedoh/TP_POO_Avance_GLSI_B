@@ -19,13 +19,12 @@ public class Ppoo_kApedoh {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       /*ClientController controller = new ClientController();
-        controller.instances();*
-        /*ProduitController controllerProduit= new ProduitController();
-        controllerProduit.instances();*/
-        /*SouscriptionController sousC=new SouscriptionController();
-        sousC.instances();*/
-        
+       ClientController controller = new ClientController();
+        controller.instances();
+        ProduitController controllerProduit= new ProduitController();
+        controllerProduit.instances();
+        SouscriptionController sousC=new SouscriptionController();
+        sousC.instances();
         SmsController smsC=new SmsController();
         smsC.instance();
     }

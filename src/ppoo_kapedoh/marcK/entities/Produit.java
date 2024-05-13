@@ -4,41 +4,19 @@
  */
 package ppoo_kapedoh.marcK.entities;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Scanner;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 /**
  *
  * @author adral
  */
-@Entity
-@Table(name = "produit")
-@NamedQueries({
-    @NamedQuery(name = "Produit.findAll", query = "SELECT p FROM Produit p"),
-    @NamedQuery(name = "Produit.findByIdProduit", query = "SELECT p FROM Produit p WHERE p.idProduit = :idProduit"),
-    @NamedQuery(name = "Produit.findByLibelle", query = "SELECT p FROM Produit p WHERE p.libelle = :libelle"),
-    @NamedQuery(name = "Produit.findByActif", query = "SELECT p FROM Produit p WHERE p.actif = :actif")})
-public class Produit implements Serializable {
+public class Produit {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @Column(name = "idProduit")
+   
     private Integer idProduit;
-    @Column(name = "libelle")
     private String libelle;
-    @Column(name = "actif")
     private String actif;
-    @OneToMany(mappedBy = "idProduit")
     private List<Souscription> souscriptionList;
 
     public Produit(String libelle, String actif) {

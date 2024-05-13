@@ -4,47 +4,25 @@
  */
 package ppoo_kapedoh.marcK.entities;
 
-import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 /**
  *
  * @author HP
  */
-@Entity
-@Table(name = "client")
-@NamedQueries({
-    @NamedQuery(name = "Client.findAll", query = "SELECT c FROM Client c"),
-    @NamedQuery(name = "Client.findByIdClient", query = "SELECT c FROM Client c WHERE c.idClient = :idClient"),
-    @NamedQuery(name = "Client.findByNom", query = "SELECT c FROM Client c WHERE c.nom = :nom"),
-    @NamedQuery(name = "Client.findByPrenom", query = "SELECT c FROM Client c WHERE c.prenom = :prenom"),
-    @NamedQuery(name = "Client.findByTelephone", query = "SELECT c FROM Client c WHERE c.telephone = :telephone")})
-public class Client implements Serializable {
+public class Client{
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @Column(name = "idClient")
+  
     private Integer idClient;
-    @Column(name = "nom")
+   
     private String nom;
-    @Column(name = "prenom")
+    
     private String prenom;
-    @Column(name = "telephone")
+   
     private String telephone;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idClient")
+    
     private List<Sms> smsCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idClient")
+    
     private List<Souscription> souscriptionCollection;
 
     public Client() {
@@ -138,7 +116,7 @@ public class Client implements Serializable {
 
     @Override
     public String toString() {
-        return "rajaa.entities.Client[ idClient=" + idClient + " ]";
+        return "ppoo_kApedoh.marcK.entities.Client[ idClient=" + idClient + " ]";
     }
     
 }

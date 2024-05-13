@@ -4,33 +4,14 @@
  */
 package ppoo_kapedoh.marcK.entities;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-
 /**
  *
  * @author adral
  */
-@Entity
-@Table(name = "sms")
-@NamedQueries({
-    @NamedQuery(name = "Sms.findAll", query = "SELECT s FROM Sms s"),
-    @NamedQuery(name = "Sms.findByIdSms", query = "SELECT s FROM Sms s WHERE s.idSms = :idSms"),
-    @NamedQuery(name = "Sms.findByLibelle", query = "SELECT s FROM Sms s WHERE s.libelle = :libelle")})
-public class Sms implements Serializable {
+public class Sms  {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @Column(name = "idSms")
+   
     private Integer idSms;
-    @Column(name = "libelle")
     private String libelle;
 
     public Sms() {
